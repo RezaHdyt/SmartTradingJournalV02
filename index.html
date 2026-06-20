@@ -414,10 +414,30 @@ input[type="range"]{accent-color:var(--green);width:100%;cursor:pointer}
 .mob-nav-item.active{color:var(--green)}
 
 /* ── Mobile Logout Button ── */
-.mob-logout-btn{display:none;position:fixed;top:14px;right:14px;z-index:200;
-  width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,61,0,0.3);
-  background:rgba(255,61,0,0.1);color:var(--red);font-size:16px;cursor:pointer;
-  align-items:center;justify-content:center}
+.mob-logout-btn{
+  display:none;
+  position:fixed;
+  top:14px;right:14px;
+  z-index:200;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  border-radius:99px;
+  border:1px solid rgba(255,61,0,0.25);
+  background:rgba(11,14,17,0.85);
+  backdrop-filter:blur(10px);
+  color:#FF6E40;
+  font-family:var(--body);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.02em;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,0.35);
+  transition:background .2s, transform .15s;
+}
+.mob-logout-btn:active{transform:scale(0.96)}
+.mob-logout-btn:hover{background:rgba(255,61,0,0.12)}
+.mob-logout-btn .icon{font-size:14px;line-height:1}
 
 /* ── Responsive ── */
 @media(max-width:1280px){.stats-grid{grid-template-columns:repeat(3,1fr)}.analytics-grid{grid-template-columns:repeat(2,1fr)}}
@@ -1251,7 +1271,10 @@ td{font-size:12px;color:#c7cfdd}
 </div>
 
 <!-- Mobile Nav -->
-<button class="mob-logout-btn" onclick="logoutUser()" title="Logout">⏻</button>
+  <button class="mob-logout-btn" onclick="logoutUser()" title="Logout">
+  <span class="icon">⏻</span> Keluar
+</button>
+<nav class="mob-nav">
 <nav class="mob-nav">
   <div class="mob-nav-inner">
     <button class="mob-nav-item active" data-view="dashboard"><span class="icon">◈</span>Dash</button>
